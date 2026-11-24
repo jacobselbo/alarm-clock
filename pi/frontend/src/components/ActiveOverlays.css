@@ -1,0 +1,159 @@
+.overlay-container {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(16px);
+  z-index: 50;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px;
+  animation: fadeIn 0.3s ease;
+}
+
+.alarm-ringing-card {
+  background: linear-gradient(145deg, #1e1b4b 0%, #0f172a 100%);
+  border: 2px solid #6366f1;
+  border-radius: 28px;
+  padding: 40px;
+  width: 90%;
+  max-width: 540px;
+  text-align: center;
+  box-shadow: 0 20px 60px rgba(99, 102, 241, 0.35);
+  animation: pulseAlarm 1.5s infinite;
+}
+
+.ringing-bell-icon {
+  color: #fbbf24;
+  animation: ringShake 0.6s infinite ease-in-out;
+  margin-bottom: 16px;
+}
+
+.alarm-ringing-time {
+  font-size: 4rem;
+  font-weight: 800;
+  color: #ffffff;
+}
+
+.alarm-ringing-label {
+  font-size: 1.6rem;
+  color: #cbd5e1;
+  margin-top: 8px;
+}
+
+.alarm-actions {
+  display: flex;
+  gap: 16px;
+  margin-top: 36px;
+}
+
+.btn-dismiss {
+  flex: 1;
+  min-height: 68px;
+  padding: 18px 24px;
+  font-size: 1.35rem;
+  font-weight: 700;
+  border-radius: 18px;
+  border: none;
+  background: #ef4444;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+
+.btn-dismiss:active {
+  transform: scale(0.97);
+}
+
+.btn-snooze {
+  flex: 1;
+  min-height: 68px;
+  padding: 18px 24px;
+  font-size: 1.35rem;
+  font-weight: 700;
+  border-radius: 18px;
+  border: none;
+  background: #f59e0b;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.1s;
+}
+
+.btn-snooze:active {
+  transform: scale(0.97);
+}
+
+.remote-message-card {
+  background: #1e293b;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 24px;
+  padding: 32px;
+  width: 90%;
+  max-width: 600px;
+  text-align: center;
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.6);
+}
+
+.remote-message-sender {
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #60a5fa;
+  margin-bottom: 14px;
+}
+
+.remote-message-text {
+  font-size: 2.2rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: #f8fafc;
+  margin-bottom: 24px;
+  word-break: break-word;
+}
+
+.remote-media-card {
+  background: #0f172a;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 24px;
+  padding: 24px;
+  width: 90%;
+  max-width: 640px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.remote-media-img {
+  max-width: 100%;
+  max-height: 55vh;
+  object-fit: contain;
+  border-radius: 16px;
+  background: #000;
+}
+
+.remote-media-caption {
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #e2e8f0;
+  margin: 16px 0;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes ringShake {
+  0% { transform: rotate(0); }
+  25% { transform: rotate(15deg); }
+  50% { transform: rotate(0); }
+  75% { transform: rotate(-15deg); }
+  100% { transform: rotate(0); }
+}
+
+@keyframes pulseAlarm {
+  0% { box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.4); }
+  70% { box-shadow: 0 0 0 24px rgba(99, 102, 241, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(99, 102, 241, 0); }
+}
